@@ -5,11 +5,8 @@ import { RegisterSchema, LoginSchema } from '../types/user';
 import { AppError, asyncHandler } from '../middleware/errorHandler';
 
 const generateToken = (id: number, email: string): string => {
-  return jwt.sign(
-    { id, email },
-    process.env.JWT_SECRET || 'secret',
-    { expiresIn: process.env.JWT_EXPIRES_IN || '7d' }
-  );
+  const secret = process.env.JWT_SECRET || 'secret';
+  return jwt.sign({ id, email }, secret, { expiresIn: '7d' });
 };
 
 export const authController = {

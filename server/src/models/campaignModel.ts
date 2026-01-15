@@ -44,8 +44,8 @@ export const campaignModel = {
     userId: number,
     data: UpdateCampaignDTO
   ): Promise<Campaign | null> {
-    const fields = [];
-    const values = [];
+    const fields: string[] = [];
+    const values: any[] = [];
     let paramCount = 1;
 
     Object.entries(data).forEach(([key, value]) => {

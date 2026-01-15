@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { campaignService } from '../services/campaignService';
-import { TrendingUp, DollarSign, Target, MousePointer, Eye } from 'lucide-react';
+import { DollarSign, Target, MousePointer, Eye } from 'lucide-react';
 
 export default function DashboardPage() {
   const { data: stats, isLoading } = useQuery({
